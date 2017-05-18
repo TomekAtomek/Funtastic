@@ -57,7 +57,7 @@ int main()
 	  (mushroom.getPosition().y - (size.y / 2) < 0 && increment.y < 0))    
         {         // Reverse the direction on Y axis.        
           increment.y = -increment.y;
-	  mushroom.setColor(sf::Color(0, 255, 255, 255)); // Red tint
+	  mushroom.setColor(sf::Color(0, 0, 0, 255)); // Red tint
         }
         
         mushroom.setPosition(mushroom.getPosition() + increment);
