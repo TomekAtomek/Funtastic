@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+#dirs
+build/
+.kdev4/
+SFML_source/
+
+#files
+source.kdev4
