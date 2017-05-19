@@ -6,7 +6,7 @@ set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 set (SFML_DIR /home/tomek/SFML_project)
 set (SOURCES_DIR /home/tomek/projects/Funtastic)
-set (SOURCE_FILES ${SOURCES_DIR}/main.cpp ${SOURCES_DIR}/Window.cpp)
+set (SOURCE_FILES ${SOURCES_DIR}/main.cpp ${SOURCES_DIR}/Window.cpp ${SOURCES_DIR}/Game.cpp)
 
 add_compile_options(-std=c++11)
 
