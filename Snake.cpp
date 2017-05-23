@@ -171,7 +171,6 @@ void Snake::Render(sf::RenderWindow window)
     window.draw(m_bodyRect);
   }
   
-  
 }
 
 
