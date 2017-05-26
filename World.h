@@ -4,11 +4,11 @@
 #include <SFML/Graphics.hpp>
 #include "Snake.h"
 
-class Window
+class World
 {
 public:
-  Wrold(sf::Vector2u windSize);
-  ~World();
+  World(sf::Vector2u windSize);
+  ~World(){}
   
   int GetBlockSize() { return m_blockSize; }
   

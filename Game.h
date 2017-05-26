@@ -1,5 +1,9 @@
 #pragma once
 #include "Window.h"
+
+#include "World.h"
+#include "Snake.h"
+
 class Game
 {
 public:
@@ -20,5 +24,8 @@ private:
   sf::Sprite m_MushroomSprite;
   sf::Vector2i m_increment;
   sf::Clock m_clock;
-  sf::Time m_elapsed;
+  float m_elapsed;
+  
+  World m_world;
+  Snake m_snake;
 };

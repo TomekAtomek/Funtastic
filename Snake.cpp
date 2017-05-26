@@ -150,7 +150,7 @@ void Snake::Cut(int segments)
   if (!m_lives) { Lose(); return;}
 }
 
-void Snake::Render(sf::RenderWindow window)
+void Snake::Render(sf::RenderWindow& window)
 {
   if (m_snakeBody.empty()) { return; }
   

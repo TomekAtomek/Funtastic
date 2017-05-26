@@ -22,7 +22,7 @@ public:
   int GetSpeed() {return m_speed;}
   int GetLives() {return m_lives;}
   int GetScore() {return m_score;}
-  void IncreaseScore(int score) {m_score += 10;}
+  void IncreaseScore() {m_score += 10;}
   sf::Vector2i GetPosition()
   {
     return ( !m_snakeBody.empty() ? m_snakeBody.front().position : sf::Vector2i(1,1)); 
@@ -40,7 +40,7 @@ public:
   
   void Cut(int segments);
   
-  void Render(sf::RenderWindow window);
+  void Render(sf::RenderWindow& window);
   
   
 private:

@@ -73,3 +73,8 @@ void Window::Create()
   
   m_window.create({m_windowSize.x,m_windowSize.y,32},m_windowTitle,style);
 }
+
+/*sf::RenderWindow* Window::GetRenderWindow()
+{
+  return &m_window;
+}*/
