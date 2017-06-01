@@ -42,6 +42,8 @@ public:
   
   void Render(sf::RenderWindow& window);
   
+  Direction GetPhysicalDirection();
+  
   
 private:
   void CheckCollisions();

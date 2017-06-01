@@ -3,9 +3,13 @@
 
 Game::Game():m_Window("MushroomFun", sf::Vector2u(800,600)), m_snake(m_world.GetBlockSize()), m_world(sf::Vector2u(800,600))
 {
+  srand(std::time(nullptr));
   m_MushroomTexture.loadFromFile("Mushroom.png");
   m_MushroomSprite.setTexture(m_MushroomTexture);
   m_increment = sf::Vector2i(400,400);
+  m_textbox.Setup(5, 14, 350, sf::Vector2f(225,0));
+  m_textbox.Add("Seeded random number generator with: " + std::to_string(std::time(nullptr)));
+  m_elapsed = 0.0f;
 }
 
 Game::~Game()
@@ -66,25 +70,26 @@ void Game::Render()
   //m_snake.Render(*m_Window.GetRenderWindow());
   m_world.Render(m_Window.m_window);
   m_snake.Render(m_Window.m_window);
+  m_textbox.Render(m_Window.m_window);
   
   m_Window.EndDraw();
 }
 
 void Game::HandleInput()
 {
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && m_snake.getDirection() != Direction::Down)
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && m_snake.GetPhysicalDirection() != Direction::Down)
   {
     m_snake.SetDirection(Direction::Up);
   }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && m_snake.getDirection() != Direction::Up)
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && m_snake.GetPhysicalDirection() != Direction::Up)
   {
     m_snake.SetDirection(Direction::Down);
   }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && m_snake.getDirection() != Direction::Left)
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && m_snake.GetPhysicalDirection() != Direction::Left)
   {
     m_snake.SetDirection(Direction::Right);
   }
-  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && m_snake.getDirection() != Direction::Right)
+  else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && m_snake.GetPhysicalDirection() != Direction::Right)
   {
     m_snake.SetDirection(Direction::Left);
   }

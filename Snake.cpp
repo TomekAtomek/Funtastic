@@ -173,6 +173,29 @@ void Snake::Render(sf::RenderWindow& window)
   
 }
 
+Direction Snake::GetPhysicalDirection()
+{
+  if (m_snakeBody.size() <= 1)
+  {
+    return Direction::None;
+  }
+  
+  SnakeSegment& head = m_snakeBody[0];
+  SnakeSegment& neck = m_snakeBody[1];
+  
+  if(neck.position.x == head.position.x)
+  {
+    return (head.position.y > neck.position.y ? Direction::Down : Direction::Up);
+  }
+  else if(neck.position.y == head.position.y)
+  {
+    return (head.position.x > neck.position.y ? Direction::Right : Direction::Left);
+  }
+  
+  return Direction::None;
+}
+
+
 
 
 

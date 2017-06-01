@@ -3,6 +3,7 @@
 
 #include "World.h"
 #include "Snake.h"
+#include "TextBox.h"
 
 class Game
 {
@@ -28,4 +29,5 @@ private:
   
   World m_world;
   Snake m_snake;
+  TextBox m_textbox;
 };
